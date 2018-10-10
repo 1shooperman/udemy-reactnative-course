@@ -12,6 +12,8 @@ https://babeljs.io/repl
 
 http://www.awesome-react-native.com/
 
+https://reactjs.org/docs/hello-world.html
+
 
 # notes:
 if modals ever get super slow for you, you might have slow animations turned on in the simulator. Made deving a living hell today, hopefully this saves someone the trouble. On iOS sim this gets toggled with `CMD + T` 
