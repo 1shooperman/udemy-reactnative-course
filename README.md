@@ -8,6 +8,7 @@
 * http://www.awesome-react-native.com/
 * https://reactjs.org/docs/hello-world.html
 * https://egghead.io/courses/getting-started-with-redux
+* https://github.com/facebook/react-devtools/tree/master/packages/react-devtools
 
 
 # notes:
