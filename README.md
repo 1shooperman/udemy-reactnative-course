@@ -9,6 +9,7 @@
 * https://reactjs.org/docs/hello-world.html
 * https://egghead.io/courses/getting-started-with-redux
 * https://github.com/facebook/react-devtools/tree/master/packages/react-devtools
+* https://github.com/facebook/react-native/search?q=targetSdkVersion
 
 
 # notes:
@@ -17,3 +18,7 @@ if modals ever get super slow for you, you might have slow animations turned on 
 state v. props:  We use state for internal component state, we use props to communicate between parent and child
 
 you can only use state with class based components
+
+`yarn start --reset-cache`
+
+`react-native link`
