@@ -22,3 +22,5 @@ you can only use state with class based components
 `yarn start --reset-cache`
 
 `react-native link`
+
+watchman watch-del-all
