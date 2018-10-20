@@ -11,7 +11,6 @@ const Input = ({ label, value, onChangeText }) => {
                 style={inputStyle}
                 value={value}
                 onChangeText={onChangeText}
-                style={{ height: 40, width: 100 }}
             />
         </View>
     )
