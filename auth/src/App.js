@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import { View } from 'react-native';
 import firebase from 'firebase';
 import { REACT_APP_FIREBASE_API_KEY } from 'react-native-dotenv'; 
-import { Header } from './components/common';
+import { Header, Spinner, Button } from './components/common';
 import LoginForm from './components/LoginForm';
 
 class App extends Component {
+    state = { loggedIn: null };
 
     componentWillMount() {
         // Initialize Firebase
@@ -18,15 +19,56 @@ class App extends Component {
             messagingSenderId: "2840192363"
         }
         firebase.initializeApp(config);
-    }
+
+        firebase.auth().onAuthStateChanged((user) => {
+            if (user) {
+                this.setState({ loggedIn: true });
+            } else {
+                this.setState({ loggedIn: false  });
+            }
+        });
+    };
+
+    renderContent() {
+        const { spinnerViewStyle, logoutViewStyle } = styles;
+
+        switch (this.state.loggedIn) {
+            case true:
+                 return (
+                     <View style={logoutViewStyle}>
+                        <Button>
+                            Log Out
+                        </Button>
+                     </View>
+                 );
+            case false:
+                return <LoginForm />;
+            default:
+                return (
+                    <View style={spinnerViewStyle}>
+                        <Spinner size="large" />
+                    </View>
+                );
+        };
+    };
     
     render() {
         return (
-            <View>
+            <View style={{ flex: 1 }}>
                 <Header headerText="Authentication" />
-                <LoginForm />
+                {this.renderContent()}
             </View>
         );
+    };
+};
+
+const styles = {
+    logoutViewStyle: {
+        flexDirection: 'row',
+    },
+    spinnerViewStyle: {
+        flexDirection: 'row',
+        flex: 1
     }
 };
 
