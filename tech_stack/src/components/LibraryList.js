@@ -13,7 +13,7 @@ class LibraryList extends Component {
             <FlatList
                 data={this.props.libraries}
                 renderItem={this.renderItem}
-                keyExtractor={library => library.id}
+                keyExtractor={library => library.id + ""} // React-native 0.57.4 throws a warning if this isn't a string
             />
         );
     }
