@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { ListView } from 'react-native';
-import { employeesFetch } from '../actions';
+import { employeesFetch, employeeCreate } from '../actions';
 import _ from 'lodash';
 import EmployeeListItem from './EmployeeListItem';
 
@@ -54,4 +54,7 @@ const mapStateToProps = state => {
     return { employees };
 };
 
-export default connect(mapStateToProps, { employeesFetch })(EmployeeList);
+export default connect(mapStateToProps, { 
+    employeesFetch,
+    employeeCreate 
+})(EmployeeList);
