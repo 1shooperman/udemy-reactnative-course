@@ -25,6 +25,10 @@ class EmployeeEdit extends Component {
         Communications.text(phone, `Your upcoming shift is on ${shift}`);
     }
 
+    onFirePress() {
+        console.log("show a modal");
+    }
+
     render() {
         return (
             <Card>
@@ -39,6 +43,12 @@ class EmployeeEdit extends Component {
                 <CardSection>
                     <Button onPress={this.onTextPress.bind(this)}>
                         Text Schedule
+                    </Button>
+                </CardSection>
+
+                <CardSection>
+                    <Button onPress={this.onFirePress.bind(this)}>
+                        Fire
                     </Button>
                 </CardSection>
 
